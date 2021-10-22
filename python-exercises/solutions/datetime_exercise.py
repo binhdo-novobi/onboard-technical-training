@@ -42,7 +42,7 @@ if __name__ == "__main__":
     print(f"The current datetime: {current_datetime}")
 
     # Run exercise 2
-    # Asia/Ho_Chi_Minh is in GMT + 7
+    # "Asia/Ho_Chi_Minh" is a GMT + 7 timezone provided by pytz 
     current_datetime_gmt7, current_datetime_utc, current_datetime_gmt = exercise_2("Asia/Ho_Chi_Minh")
     print(f"GMT + 7: {current_datetime_gmt7}")
     print(f"UTC: {current_datetime_utc}")

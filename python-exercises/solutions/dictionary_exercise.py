@@ -30,6 +30,7 @@ def exercise_2(order, delivery_order):
             item['delivered_qty'] = temp[item['product']]
 
     return order
+    
 def exercise_3(orders):
 
     consolidated_order = {}

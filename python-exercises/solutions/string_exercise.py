@@ -61,6 +61,7 @@ if __name__ == "__main__":
     """
     Print out the count of appearence for each word.
     """
+    # Please uncomment the following line to run
     # print_appereance(freq_dict)
 
     """"
@@ -68,6 +69,7 @@ if __name__ == "__main__":
     If yes, print the times that the word appear, 
     or print out a message saying it does not exist if no.
     """
+    # Please uncomment the following 2 lines to run
     # inp = input("Please input your word: ")
     # check_for_a_word(freq_dict, inp)
 

@@ -40,18 +40,16 @@ class ParkingLot:
         capacity: size of the parking lot
     """
     def __init__(self, capacity):
-        self.car_count = 0
+        self.car_count = 0 # number of parked cars in the parking lot
         self.parking_slots = dict.fromkeys([i for i in range(1, int(capacity)+1)])
 
     def get_parked_cars(self):
-        # Return the number of parked cars
         return self.car_count
 
     def get_parking_slots(self):
         return self.parking_slots
 
     def set_parking_slots(self, slot, car_obj):
-        # Set the car object in the slot
         self.parking_slots[slot] = car_obj
 
 def create_parking_lot(capacity):
@@ -65,8 +63,8 @@ def create_parking_lot(capacity):
 
     parking_lot = ParkingLot(int(capacity))
 
-    # Comment the following line when testing for easier test verbose
-    # print(f"Successfully created a parking lot with {str(capacity)} slots.")
+    # Comment the following line when running unit tests for easier test verbose.
+    print(f"Successfully created a parking lot with {str(capacity)} slots.")
     
     return parking_lot
 
@@ -77,6 +75,8 @@ def park(parking_lot, registration_num, color):
     and prints the allocated slot in the parking lot
     """
     if parking_lot:
+
+        # Check if there are any available slots.
         if not len(parking_lot.get_parking_slots()) <= parking_lot.get_parked_cars():
 
             parking_slot = parking_lot.get_parking_slots()
@@ -168,7 +168,6 @@ def slot_numbers_for_cars_with_colour(parking_lot, colour):
                 if parked_car is not None:
                     if parked_car.get_car_color() == colour:
                         found_flag = True
-                        # result = 'Registration numbers for cars with this color: '
                         result += str(parked_car.get_car_registration_number()) + ', '           
             result = 'Registration numbers for cars with this color: ' + result
             if not found_flag:
@@ -246,11 +245,11 @@ def execute(parking_lot, command):
     elif command[0] == 'status':
         status(parking_lot)
     elif command[0] == 'slot_numbers_for_cars_with_colour':
-        print(slot_numbers_for_cars_with_colour(parking_lot, command[1]).rstrip(', ')) # rstrip to remove the , after the ending item in the list
+        print(slot_numbers_for_cars_with_colour(parking_lot, command[1]).rstrip(', ')) # rstrip to remove the trailing ,
     elif command[0] == 'slot_number_for_registration_number':
-        print(slot_number_for_registration_number(parking_lot, command[1]).rstrip(', ')) # rstrip to remove the , after the ending item in the list
+        print(slot_number_for_registration_number(parking_lot, command[1]).rstrip(', ')) # rstrip to remove the trailing ,
     elif command[0] == 'registration_numbers_for_cars_with_colour':
-        print(registration_numbers_for_cars_with_colour(parking_lot, command[1]).rstrip(', ')) # rstrip to remove the , after the ending item in the list
+        print(registration_numbers_for_cars_with_colour(parking_lot, command[1]).rstrip(', ')) # rstrip to remove the trailing ,
     else:
         print('Command not found, please try again !!!')
 

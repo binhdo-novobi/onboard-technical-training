@@ -46,7 +46,7 @@ def exercise_2():
     
     password_length = input("Desired password length(in characters): ")
 
-    # Random sample and shuffle the sampled result.
+    # Randomly sample the character pool and shuffle the sampled result.
     sampled = random.sample(char_pool, int(password_length))
     l = list(sampled)
     random.shuffle(l)

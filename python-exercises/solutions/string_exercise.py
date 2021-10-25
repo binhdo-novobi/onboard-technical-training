@@ -29,7 +29,7 @@ def read_and_write(input_path, output_path):
             larger_than_1.append(keys)
     
     with open(output_path, 'w') as writer:
-        writer.write(" ".join(larger_than_1))
+        writer.write(", ".join(larger_than_1))
     
     return freq
 

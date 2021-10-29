@@ -6,9 +6,10 @@ def exercise_1():
     year = datetime.today().year
     name = input("Enter your name: ")
     age = int(input("Enter your age: "))
-    print("Hey {}, in {} you will be 100 years old".format(name, 100 - age + year))
+    line = "Hey {}, in {} you will be 100 years old".format(name, 100 - age + year)
+    print(line)
     n = int(input("Enter a number of copies: "))
-    [print("Hey {}, in {} you will be 100 years old".format(name, 100 - age + year)) for _ in range(n)]
+    [print(line) for _ in range(n)]
 
 
 # Exercise 2:

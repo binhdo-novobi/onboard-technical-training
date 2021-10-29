@@ -1,23 +1,23 @@
+import itertools
+
 # Exercise 1:
 def exercise_1(price_list, *args):
     result = {}
     for order in args:
         for item in order:
-            product = list(item.keys())[0]
-            if product in result.keys():
-                result[product] += item[product] * price_list[product]
+            product, count = list(item.items())[0]
+            if product in result:
+                result[product] += count * price_list[product]
             else:
-                result[product] = item[product] * price_list[product]
+                result[product] = count * price_list[product]
     return result
 
 
 # Exercise 2
 def exercise_2(order, delivery_order):
-    for item_del in delivery_order:
-        for item_ord in order:
-            if item_ord["product"] == item_del["product"]:
-                item_ord["delivered_qty"] = item_del["delivered_qty"]
-                break
+    for item_del, item_ord in itertools.product(delivery_order, order):
+        if item_ord["product"] == item_del["product"]:
+            item_ord["delivered_qty"] = item_del["delivered_qty"]
 
 
 # Exercise 3

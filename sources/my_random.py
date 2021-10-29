@@ -31,7 +31,7 @@ def exercise_1():
 
 # Exercise 2
 # Password generator
-characters = list(string.ascii_letters + string.digits + "~`!@#$%^&*()_-+={[}]|:;'<,>.?/\"\\")
+characters = list(string.ascii_letters + string.digits + string.punctuation)
 
 
 def exercise_2():

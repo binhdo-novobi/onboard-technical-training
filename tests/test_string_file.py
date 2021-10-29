@@ -3,7 +3,6 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../sources')))
 import io
 import unittest
-from unittest import mock
 from my_string_file import *
 
 
@@ -32,15 +31,13 @@ class TestStringFile(unittest.TestCase):
         expected_output = "dolor,ut,dolore,in"
         self.assertEqual(result, expected_output)
 
-    @mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_check_word_exist(self, mock_stdout):
-        check_word_exist(self.count_dict, "in")
-        self.assertEqual(mock_stdout.getvalue(), "3\n")
+    def test_check_word_exist(self):
+        result = check_word_exist(self.count_dict, "in")
+        self.assertEqual(result, 3)
 
-    @mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_check_word_not_exist(self, mock_stdout):
-        check_word_exist(self.count_dict, "aaa")
-        self.assertEqual(mock_stdout.getvalue(), "aaa does not exist\n")
+    def test_check_word_not_exist(self):
+        result = check_word_exist(self.count_dict, "aaa")
+        self.assertEqual(result, 0)
 
 
 if __name__ == "__main__":

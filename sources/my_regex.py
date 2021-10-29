@@ -3,8 +3,10 @@ import re
 
 # Exercise 1
 def exercise_1(t):
-    t = re.sub("AM", " AM", t)
-    t = re.sub("PM", " PM", t)
+    if "AM" in t:
+        t = re.sub("AM", " AM", t)
+    elif "PM" in t:
+        t = re.sub("PM", " PM", t)
     return t
 
 
